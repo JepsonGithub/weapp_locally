@@ -4,47 +4,15 @@
   <swiper class="slides" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
     <block wx:for="{{imgUrls}}" wx:key="unique">
       <swiper-item>
-        <image src="{{item}}" class="slide-image" />
+        <image src="{{item.image}}" class="slide-image" />
       </swiper-item>
     </block>
   </swiper>
 
   <view class="grids">
-    <view class="item">
-      <image src="../../assets/grid/grid-01.png" />
-      <text>美食</text>
-    </view>
-    <view class="item">
-      <image src="../../assets/grid/grid-02.png" />
-      <text>美食</text>
-    </view>
-    <view class="item">
-      <image src="../../assets/grid/grid-03.png" />
-      <text>美食</text>
-    </view>
-    <view class="item">
-      <image src="../../assets/grid/grid-04.png" />
-      <text>美食</text>
-    </view>
-    <view class="item">
-      <image src="../../assets/grid/grid-05.png" />
-      <text>美食</text>
-    </view>
-    <view class="item">
-      <image src="../../assets/grid/grid-06.png" />
-      <text>美食</text>
-    </view>
-    <view class="item">
-      <image src="../../assets/grid/grid-07.png" />
-      <text>美食</text>
-    </view>
-    <view class="item">
-      <image src="../../assets/grid/grid-08.png" />
-      <text>美食</text>
-    </view>
-    <view class="item">
-      <image src="../../assets/grid/grid-09.png" />
-      <text>美食</text>
+    <view class="item" wx:for="{{gridsList}}" wx:key="unique">
+      <image src="{{item.icon}}" />
+      <text>{{item.name}}</text>
     </view>
   </view>
 
