@@ -13,24 +13,28 @@
     "enablePullDownRefresh": false
   },
   "tabBar": {
+    "color": "#999",
+    "selectedColor": "#444",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
     "list": [
       {
         "pagePath": "pages/index/index",
         "text": "首页",
-        "iconPath": "assets/home.png",
-        "selectedIconPath": "assets/home-active.png"
+        "iconPath": "assets/tabs/home.png",
+        "selectedIconPath": "assets/tabs/home-active.png"
       },
       {
         "pagePath": "pages/message/message",
         "text": "消息",
-        "iconPath": "assets/message.png",
-        "selectedIconPath": "assets/message-active.png"
+        "iconPath": "assets/tabs/message.png",
+        "selectedIconPath": "assets/tabs/message-active.png"
       },
       {
         "pagePath": "pages/profile/profile",
         "text": "我的",
-        "iconPath": "assets/profile.png",
-        "selectedIconPath": "assets/profile-active.png"
+        "iconPath": "assets/tabs/profile.png",
+        "selectedIconPath": "assets/tabs/profile-active.png"
       }
     ]
   }

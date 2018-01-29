@@ -1,13 +1,56 @@
-<!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+<view>
+
+  <!-- 轮播图配置 -->
+  <swiper class="slides" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}" wx:key="unique">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" />
+      </swiper-item>
     </block>
+  </swiper>
+
+  <view class="grids">
+    <view class="item">
+      <image src="../../assets/grid/grid-01.png" />
+      <text>美食</text>
+    </view>
+    <view class="item">
+      <image src="../../assets/grid/grid-02.png" />
+      <text>美食</text>
+    </view>
+    <view class="item">
+      <image src="../../assets/grid/grid-03.png" />
+      <text>美食</text>
+    </view>
+    <view class="item">
+      <image src="../../assets/grid/grid-04.png" />
+      <text>美食</text>
+    </view>
+    <view class="item">
+      <image src="../../assets/grid/grid-05.png" />
+      <text>美食</text>
+    </view>
+    <view class="item">
+      <image src="../../assets/grid/grid-06.png" />
+      <text>美食</text>
+    </view>
+    <view class="item">
+      <image src="../../assets/grid/grid-07.png" />
+      <text>美食</text>
+    </view>
+    <view class="item">
+      <image src="../../assets/grid/grid-08.png" />
+      <text>美食</text>
+    </view>
+    <view class="item">
+      <image src="../../assets/grid/grid-09.png" />
+      <text>美食</text>
+    </view>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+
+  <view class="links">
+    <image src="../../assets/link-01.png"></image>
+    <image src="../../assets/link-02.png"></image>
   </view>
+
 </view>

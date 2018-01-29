@@ -1,21 +1,52 @@
-/**index.wxss**/
-.userinfo {
+/* 轮播图 */
+.slides {
+  height: 380rpx;
+}
+.slides image {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* grids */
+.grids{
+  background-color: #fff;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  border-top: 1rpx solid #eee;
+  border-left: 1rpx solid #eee;
+}
+
+.grids .item {
+  width: 33.3%;
+  height: 250rpx ;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 28rpx;
+  border-right: 1rpx solid #eee;
+  border-bottom: 1rpx solid #eee;
+  box-sizing: border-box;
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.grids .item image{
+  width: 70rpx;
+  height: 70rpx;
 }
 
-.userinfo-nickname {
-  color: #aaa;
+.grids .item text {
+  font-size: 28rpx;
+  margin-top: 10rpx;
 }
 
-.usermotto {
-  margin-top: 200px;
+/* links  */
+.links {
+  display: flex;
+}
+
+.links image {
+  flex: 1;
+  margin: 30rpx;
+  height: 180rpx;
 }
