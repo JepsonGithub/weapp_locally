@@ -21,3 +21,9 @@
   </view>
 
 </view>
+
+
+<view wx:if="{{isMoreToLoad}}" class='loading'>正在加载更多内容</view>
+<view wx:else class="nothing">没有更多内容了</view>
+
+
