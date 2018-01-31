@@ -5,34 +5,18 @@
 
 <view class='goodslist'>
 
-  <view class='item'>
+  <view class='item' wx:for="{{shops}}" wx:key="id">
     <view class='pic'>
-      <image src="/assets/link-01.png"></image>
+      <image src="{{ item.images[0] }}"></image>
     </view>
     <view class='info'>
-      <text class='title'>宫廷月亮虾饼</text>
-      <text>电话: 157515776629</text>
-      <text>地址: 上海市浦东新区xx镇xx路xx号</text>
-      <text>营业时间: 周一到周日 10:00-21:00 </text>
+      <text class='title'>{{ item.name }}</text>
+      <text>电话: {{ item.phone }}</text>
+      <text>地址: {{ item.address }}</text>
+      <text>营业时间: {{ item.businessHours }} </text>
     </view>
     <view class='tips'>
-      <text class='num'>100</text>
-    </view>
-  </view>
-
-
-  <view class='item'>
-    <view class='pic'>
-      <image src="/assets/link-01.png"></image>
-    </view>
-    <view class='info'>
-      <text class='title'>宫廷月亮虾饼</text>
-      <text>电话: 157515776629</text>
-      <text>地址: 上海市浦东新区xx镇xx路xx号</text>
-      <text>营业时间: 周一到周日 10:00-21:00 </text>
-    </view>
-    <view class='tips'>
-      <text class='num'>100</text>
+      <text class='score'>{{ item.score }}</text>
     </view>
   </view>
 

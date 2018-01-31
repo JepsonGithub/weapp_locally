@@ -7,6 +7,12 @@ Page({
    * 页面的初始数据
    */
   data: {
+    // 当前页
+    page: 1,
+    
+    // 每页多少条
+    limit: 10,
+
     // 当前加载的分类
     category: {},
 
@@ -20,16 +26,29 @@ Page({
    */
   onLoad: function (options) {
     let cat = options.cat || 1;
+    console.log(this.data.shops )
+
     // 请求标题, 进行渲染
     fetch(`categories/${cat}`).then( res => {
-      console.log( res )
       // 拿到标题栏数据, 设置给标题
       let title = res.data.name
+
+      // 动态更新到data中
+      this.setData({ category: { title: title } })
+
       // 动态设置当前页面的标题
       wx.setNavigationBarTitle({
         title: title
       })
     })
+
+    // 请求列表信息, 进行渲染
+    fetch(`categories/${cat}/shops`, { _page: this.page, _limit: this.limit }).then( res => {
+      console.log( res.data )
+      // 动态更新商品列表信息
+      this.setData({ shops: res.data })
+    })
+
   },
 
   /**
