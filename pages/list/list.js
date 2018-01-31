@@ -1,3 +1,5 @@
+const fetch = require('../../utils/fetch')
+
 // pages/list/list.js
 Page({
 
@@ -5,6 +7,11 @@ Page({
    * 页面的初始数据
    */
   data: {
+    // 当前加载的分类
+    category: {},
+
+    // 当前分类下的所有店铺
+    shops: []
   
   },
 
@@ -12,7 +19,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    let cat = options.cat || 1;
+    // 请求标题, 进行渲染
+    fetch(`categories/${cat}`).then( res => {
+      console.log( res )
+      // 拿到标题栏数据, 设置给标题
+      let title = res.data.name
+      // 动态设置当前页面的标题
+      wx.setNavigationBarTitle({
+        title: title
+      })
+    })
   },
 
   /**
