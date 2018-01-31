@@ -20,8 +20,23 @@ Page({
     shops: [],
 
     // 是否正在加载
-    isMoreToLoad: true
+    isMoreToLoad: true,
+
+    // 搜索字段
+    queryString: ""
   
+  },
+
+  // 更新搜索字段, 并重置所有字段
+  search() {
+    // 上拉事件触发, 先重置数据, 再调用 loadingMore 即可
+    this.setData({ currentPage: 0, shops: [], isMoreToLoad: true })
+    this.loadingMore()
+  },
+
+  // 处理函数
+  inputChangeHandle( e ) {
+    this.setData( { queryString: e.detail.value } )
   },
 
   // 加载更多的方法封装
@@ -30,12 +45,21 @@ Page({
 
     this.setData({ currentPage: ++this.data.currentPage } )
 
+    let queryObj = {};
+    queryObj._page = this.data.currentPage
+    queryObj._limit = this.data.pageSize
+
+    // 判断是否需要加上搜索字段
+    if ( this.data.queryString ) {
+      queryObj.q = this.data.queryString
+    }
+
     // 请求列表信息, 进行渲染
-    return fetch(`categories/${this.data.category.id}/shops`, { _page: this.data.currentPage, _limit: this.data.pageSize }).then(res => {
+    return fetch(`categories/${this.data.category.id}/shops`, queryObj).then(res => {
       // 获取当前一共多少条数据, 计算出下次是否有更多的数据进行进行渲染了
+      let { currentPage, pageSize } = this.data
       let totalLength = res.header["X-Total-Count"]
-      let totalPages = Math.ceil((totalLength / this.data.pageSize))
-      let isMoreToLoad = this.data.currentPage < totalPages ? true : false
+      let isMoreToLoad = currentPage < Math.ceil((totalLength / pageSize)) ? true : false
 
       // 将计算出来是否下次可以加载更多内容同步到数据源中
       this.setData({ isMoreToLoad : isMoreToLoad } )

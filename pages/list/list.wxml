@@ -1,6 +1,6 @@
 <view class="search">
-  <input placeholder="搜索"/>
-  <icon type="search" size="14"/>
+  <input placeholder="搜索"  bindinput="inputChangeHandle" bindblur="search" value="{{q}}"/>
+  <icon type="search" size="14" bindtap="search"/>
 </view>
 
 <view class='goodslist'>
