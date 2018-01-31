@@ -6,7 +6,7 @@
     "pages/list/list"    
   ],
   "window":{
-    "backgroundTextStyle":"light",
+    "backgroundTextStyle":"black",
     "navigationBarBackgroundColor": "#3a4861",
     "navigationBarTitleText": "本地生活",
     "navigationBarTextStyle":"white",

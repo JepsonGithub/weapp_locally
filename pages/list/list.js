@@ -25,12 +25,13 @@ Page({
   },
 
   // 加载更多的方法封装
+  // loadingMore 会返回一个 promise 对象
   loadingMore() {
 
     this.setData({ currentPage: ++this.data.currentPage } )
 
     // 请求列表信息, 进行渲染
-    fetch(`categories/${this.data.category.id}/shops`, { _page: this.data.currentPage, _limit: this.data.pageSize }).then(res => {
+    return fetch(`categories/${this.data.category.id}/shops`, { _page: this.data.currentPage, _limit: this.data.pageSize }).then(res => {
       // 获取当前一共多少条数据, 计算出下次是否有更多的数据进行进行渲染了
       let totalLength = res.header["X-Total-Count"]
       let totalPages = Math.ceil((totalLength / this.data.pageSize))
@@ -87,6 +88,12 @@ Page({
    */
   onPullDownRefresh: function () {
     console.log( "上拉事件触发" )
+
+    // 上拉事件触发, 先重置数据, 再调用 loadingMore 即可
+    this.setData({ currentPage: 0, shops: [], isMoreToLoad: true })
+    this.loadingMore().then(() => {
+      wx.stopPullDownRefresh()
+    })
   },
 
   /**
