@@ -3,17 +3,23 @@
   <!-- 轮播图配置 -->
   <swiper class="slides" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
     <block wx:for="{{imgUrls}}" wx:key="unique">
-      <swiper-item>
-        <image src="{{item.image}}" class="slide-image" />
+      <navigator  wx:if="{{ item.link }}"  url='{{ item.link }}'>
+        <swiper-item>
+          <image src="{{item.image}}" class="slide-image" />
+        </swiper-item>
+      </navigator>
+
+      <swiper-item wx:else>
+          <image src="{{item.image}}" class="slide-image" />
       </swiper-item>
     </block>
   </swiper>
 
   <view class="grids">
-    <view class="item" wx:for="{{gridsList}}" wx:key="unique">
+    <navigator url="/pages/list/list?cat={{item.id}}" class="item" wx:for="{{gridsList}}" wx:key="unique">
       <image src="{{item.icon}}" />
       <text>{{item.name}}</text>
-    </view>
+    </navigator>
   </view>
 
   <view class="links">

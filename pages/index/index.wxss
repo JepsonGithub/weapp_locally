@@ -2,6 +2,7 @@
 .slides {
   height: 380rpx;
 }
+.slides image,
 .slides image {
   width: 100%;
   height: 100%;

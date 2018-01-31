@@ -1,3 +1,5 @@
+const fetch = require("../../utils/fetch")
+
 Page({
   data: {
     // 图片地址列表
@@ -19,37 +21,15 @@ Page({
   onLoad: function (options) {
 
     // 轮播图数据渲染
-    wx.request({
-      // 在手机上没有所谓的域, 所以没有跨域的概念
-      url: 'https://locally.uieee.com/slides',
-      data: {},
-      method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-      // header: {}, // 设置请求的 header
-      success: res => {
-        // success
-        console.log( res.data )
-        if ( res.statusCode === 200 ) {
-          this.setData({
-            "imgUrls": res.data
-          })
-        }
-        
-      }
+    fetch( "slides" ).then(res => {
+      console.log( res.data )
+      this.setData({ "imgUrls": res.data });
     })
 
     // grid 列表渲染
-    wx.request({
-      url: "https://locally.uieee.com/categories",
-      data: {},
-      method: "GET",
-      success: res => {
-        console.log( res )
-        if ( res.statusCode === 200 ) {
-          this.setData({
-            gridsList: res.data
-          })
-        }
-      }
+    fetch("categories").then(res => {
+      this.setData({ "gridsList": res.data });
     })
+    
   },
 })
