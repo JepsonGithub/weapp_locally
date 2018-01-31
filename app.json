@@ -1,9 +1,9 @@
 {
   "pages":[
+    "pages/list/list",
     "pages/index/index",
     "pages/message/message",
-    "pages/profile/profile",
-    "pages/list/list"
+    "pages/profile/profile"
   ],
   "window":{
     "backgroundTextStyle":"light",
