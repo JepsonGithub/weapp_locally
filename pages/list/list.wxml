@@ -1,3 +1,5 @@
+<import src="./list-item/list-item-template.wxml"/>
+
 <view class="search">
   <input placeholder="搜索"  bindinput="inputChangeHandle" bindblur="search" value="{{q}}"/>
   <icon type="search" size="14" bindtap="search"/>
@@ -5,20 +7,9 @@
 
 <view class='goodslist'>
 
-  <view class='item' wx:for="{{shops}}" wx:key="id">
-    <view class='pic'>
-      <image src="{{ item.images[0] }}"></image>
-    </view>
-    <view class='info'>
-      <text class='title'>{{ item.name }}</text>
-      <text>电话: {{ item.phone }}</text>
-      <text>地址: {{ item.address }}</text>
-      <text>营业时间: {{ item.businessHours }} </text>
-    </view>
-    <view class='tips'>
-      <text class='score'>{{ item.score }}</text>
-    </view>
-  </view>
+  <block wx:for="{{shops}}" wx:key="id">
+    <template is="list-item" data="{{ ...item }}" />
+  </block>
 
 </view>
 

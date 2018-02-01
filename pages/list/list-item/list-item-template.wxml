@@ -1,0 +1,18 @@
+<template name="list-item">
+
+  <view class='item' bindtap="go" data-id="{{id}}">
+    <view class='pic'>
+      <image src="{{ images[0] }}"></image>
+    </view>
+    <view class='info'>
+      <text class='title'>{{ name }}</text>
+      <text>电话: {{ phone }}</text>
+      <text>地址: {{ address }}</text>
+      <text>营业时间: {{ businessHours }} </text>
+    </view>
+    <view class='tips'>
+      <text class='score'>{{ score }}</text>
+    </view>
+  </view>
+
+</template>
