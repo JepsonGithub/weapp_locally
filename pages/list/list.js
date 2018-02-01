@@ -73,6 +73,7 @@ Page({
 
       // 动态更新商品列表信息
       this.setData({ shops })
+
     })
 
   },
@@ -101,6 +102,7 @@ Page({
 
     // 一进来先触发一次加载第一页的数据
     this.loadingMore()
+    
   },
 
   /**
