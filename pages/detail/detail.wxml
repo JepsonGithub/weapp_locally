@@ -2,7 +2,7 @@
 <swiper class='slider' autoplay="true" interval="5000" duration="1000">
   <block wx:for="{{shop.images}}" wx:key="unique">
     <swiper-item>
-      <image src="{{item}}" class="slide-image"/>
+      <image catchtap="preview" data-src="{{item}}" src="{{item}}" class="slide-image"/>
     </swiper-item>
   </block>
 </swiper>
@@ -36,7 +36,6 @@
 <wxs module="imgutil">
   module.exports = {
     size: function( input ) {
-      console.log( input )
       return input.replace("w.h", "100.100")
     }
   }
