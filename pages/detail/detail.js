@@ -6,22 +6,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imgUrls: []
+    shop: {},
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log( options.item )
     let shopid = options.item
     fetch( `shops/${shopid}` ).then( res => {
-
       console.log( res.data )
-
-      // 设置轮播图图片
-      this.setData({ imgUrls: res.data.images })
-
+      this.setData({ shop: res.data })
     })
 
   },
