@@ -4,7 +4,8 @@
     "pages/message/message",
     "pages/profile/profile",
     "pages/list/list",
-    "pages/detail/detail"    
+    "pages/detail/detail",
+    "pages/setting/setting"  
   ],
   "window":{
     "backgroundTextStyle":"black",

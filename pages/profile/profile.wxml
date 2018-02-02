@@ -11,5 +11,5 @@
   <navigator class="item">隐私权政策</navigator>
   <navigator class="item">联系客服</navigator>
   <view class="divider"></view>
-  <navigator url="/pages/settings/settings" class="item">设置</navigator>
+  <navigator url="/pages/setting/setting" class="item">设置</navigator>
 </view>
