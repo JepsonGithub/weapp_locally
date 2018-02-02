@@ -25,39 +25,48 @@ http://jepson.site/
 ## 项目接口说明
 
 - 首页 轮播图 接口
+    
     `https://locally.uieee.com/slides`
 
 ---
 
 - 首页 grid 列表渲染
+   
     `https://locally.uieee.com/categories`
 
 ---
 
 - 请求标题栏名称( 要根据 grid 中存的 categoryId 来请求 )
+    
     `https://locally.uieee.com/categories/${categoryId}`
 
 --- 
 
 - 商品列表信息渲染, 请求该 categoryId 下的所有商品信息
+
     `https://locally.uieee.com/categories/${categoryId}/shops`
 
 --- 
 
 - 传参支持分页
-        `https://locally.uieee.com/categories/${categoryId}/shops?_page=1&_limit=10`
-        _page 当前页, _limit 一页多少条
+
+    `https://locally.uieee.com/categories/${categoryId}/shops?_page=1&_limit=10`
+    
+-  _page 当前页, _limit 一页多少条
 
 ---
         
 - 支持搜索功能, 多传一个 q 参数即可
-        `https://locally.uieee.com/categories/${categoryId}/shops?_page=1&_limit=10&q=黄焖鸡`
-        q 表示搜索关键字
+
+    `https://locally.uieee.com/categories/${categoryId}/shops?_page=1&_limit=10&q=黄焖鸡`
+
+- q 表示搜索关键字
         
 ---
 
 - 商品详情页接口
-    `https://locally.uieee.com/categories/${categoryId}/shops/${shopid}`
+
+    `https://locally.uieee.com/shops/${shopid}`
 
 
 
