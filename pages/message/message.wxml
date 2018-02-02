@@ -1,14 +1,14 @@
 <view class="messages">
   <view class="item" wx:for="{{ messages }}" wx:key="unquine">
-    <navigator>
+    <view>
       <text class="title">{{ item.title }}</text>
-    </navigator>
+    </view>
     <text class="date">{{ item.date }}</text>
-    <navigator>
+    <view>
       <image src="{{ item.image }}"/>
-    </navigator>
+    </view>
     <text class="summary">{{ summary }}</text>
-    <navigator class="expand">Read All</navigator>
+    <view class="expand">Read All</view>
   </view>
 </view>
 
