@@ -1,6 +1,6 @@
 <template name="list-item">
 
-  <view class='item' bindtap="go" data-id="{{id}}">
+  <view class='item'>
     <view class='pic'>
       <image src="{{ images[0] }}"></image>
     </view>

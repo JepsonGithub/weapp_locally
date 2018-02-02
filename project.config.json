@@ -26,13 +26,19 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 1,
 			"list": [
 				{
 					"id": -1,
 					"name": "list-test",
 					"pathName": "pages/list/list",
 					"query": "cat=1"
+				},
+				{
+					"id": -1,
+					"name": "detail",
+					"pathName": "pages/detail/detail",
+					"query": "item=1"
 				}
 			]
 		}

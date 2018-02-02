@@ -4,6 +4,7 @@ const fetch = require('../../utils/fetch')
 Page({
   go(e) {
     console.log(e.currentTarget.dataset.id)
+    wx.navigateTo({ url: "../detail/detail" })
   },
 
   /**

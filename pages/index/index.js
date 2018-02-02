@@ -30,18 +30,6 @@ Page({
     fetch("categories").then(res => {
       this.setData({ "gridsList": res.data });
     })
-
-    wx.showActionSheet({
-      itemList: ['A', 'B', 'C'],
-      success: function (res) {
-        console.log( res )
-        console.log(res.tapIndex)
-      },
-      fail: function (res) {
-        console.log( 123 )
-        console.log(res.errMsg)
-      }
-    })
     
   },
 })

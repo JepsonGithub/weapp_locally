@@ -8,7 +8,9 @@
 <view class='goodslist'>
 
   <block wx:for="{{shops}}" wx:key="id">
-    <template is="list-item" data="{{ ...item }}" />
+    <navigator url='/pages/detail/detail?item={{item.id}}'>
+      <template is="list-item" data="{{ ...item }}" />
+    </navigator>
   </block>
 
 </view>

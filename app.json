@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/message/message",
     "pages/profile/profile",
-    "pages/list/list"    
+    "pages/list/list",
+    "pages/detail/detail"    
   ],
   "window":{
     "backgroundTextStyle":"black",
